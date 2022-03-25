@@ -1,43 +1,26 @@
 <template>
   <div>
-    <v-app-bar color="deep-purple accent-4" dense dark>
+    <v-app-bar color="#A1DBB2" dense dark>
       <v-app-bar-nav-icon
-        ><router-link to="/">LOGO</router-link></v-app-bar-nav-icon
+        ><router-link to="/"
+          ><v-icon class="colorIn">mdi-book</v-icon></router-link
+        ></v-app-bar-nav-icon
       >
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>Open Books</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <div class="input-group">
+      <div class="input-group busqueda">
         <input
           type="text"
-          class="form-control"
-          aria-label="Text input with segmented dropdown button"
+          class="form-control colorIn"
+          placeholder="Type to Search"
         />
-        <button type="button" class="btn btn-outline-secondary">Action</button>
-        <button
-          type="button"
-          class="
-            btn btn-outline-secondary
-            dropdown-toggle dropdown-toggle-split
-          "
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <span class="visually-hidden">Toggle Dropdown</span>
+        <button type="button" class="btn btn-outline-secondary colorIn">
+          <v-icon class="colorIn">mdi-magnify</v-icon>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
       </div>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
     </v-app-bar>
   </div>
 </template>
@@ -47,4 +30,35 @@ export default {};
 </script>
 
 <style>
+.colorIn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.colorIn:hover {
+  background-color: transparent !important;
+  border-color: rgba(244, 93, 76, 1) !important;
+  color: #f45d4c !important;
+}
+
+.colorIn:focus {
+  background-color: transparent !important;
+  border-color: rgba(244, 93, 76, 0.5) !important;
+  color: #f45d4c !important;
+}
+
+.busqueda {
+  width: 350px !important;
+}
+@media (max-width: 768px) {
+  .busqueda {
+    width: 250px !important;
+  }
+}
+@media (max-width: 576px) {
+  .busqueda {
+    width: 150px !important;
+  }
+}
 </style>
